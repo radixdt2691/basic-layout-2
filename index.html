@@ -81,6 +81,11 @@
         .w-50{
             width: 50%;
         }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        display: none;
+        margin: 0;
+        }
         ::placeholder{
             
             position: absolute; 
@@ -89,7 +94,7 @@
             font-family: 'Nunito Sans';
             font-style: normal;
             font-weight: 400;
-            font-size: 16px;
+            font-size: 18px;
             line-height: 16px;
             color: #9B9B9B;
         }
@@ -349,7 +354,7 @@
                         </div>
                         <div class="form-grp-1">
                             <label class="label-form">Mobile Number: </label><br>
-                            <input type="tel" class="text" placeholder="Mobile Number" maxlength="10"  title="Ten digits code" required>
+                            <input type="number" class="text" placeholder="Mobile Number" onKeyPress="if(this.value.length==10) return false;"  title="Ten digits code" required>
                        </div>
                        <div class="form-grp-2">
                             <label class="label-form">Website: </label><br>
