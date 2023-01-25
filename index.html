@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.0.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+    <title>Layout Training</title>
+    <style>
+        @font-face {
+            font-family: "Nunito Sans";
+            src: url(./assets/fonts/AnyConv.com__NunitoSans-Regular.woff);
+        }
+        @font-face {
+            font-family: "Lato";
+            src: url(./assets/fonts/AnyConv.com__Lato-Regular.woff);
+        }
+        .container {
+            max-width: 1920px;
+            margin: 0 auto;
+        }
+        .flex{
+            display: flex;
+            align-items: center;
+        }
+        .d-flex{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .main-nav{
+            width: 100%;
+            position: fixed;
+            top: 0%;
+            left: 0;
+            background: white;
+        }
+        .link{
+            font-family: 'Arial';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 23px;
+            text-decoration: none;
+            color: #000000; 
+        }
+       
+        .link-1{
+            text-decoration: underline;
+            color: #FF0000;
+        }
+        .nav{
+            width: 100%;
+        }
+        .col-1-1 {
+            padding: 15px 13px;
+        }
+        .col-2{
+            width: calc(100%/2);
+        }
+        nav ol {
+            float: right;
+            display: flex;
+            align-items: stretch;
+        }
+        nav ol li {
+            display: inline-block;
+            margin: 0 35px;
+            display: flex;
+            align-items: stretch;
+        }
+        .search-btn{
+            position: absolute;
+            width: 521px;
+            height: 36px;
+            left: 1319px;
+            top: 20px;
+            border: 1px solid #B6B6B6;
+            border-radius: 18px;
+            padding: 0px 10px 0px 10px;
+        }
+        ::placeholder{
+            
+            position: absolute; 
+            left: 10px;
+            top: 8px;
+            font-family: 'Nunito Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;
+            color: #9B9B9B;
+        }
+        .icon{
+            position: absolute; 
+            width: 16px;
+            height: 16px;
+            left: 1838px;
+            top: 30px;
+            color: #9B9B9B;
+        }
+        .header-banner{
+            margin-top: 110px;
+        }
+        .main-heading-1{
+            margin-top: 50px;
+        }
+        .main-heading{
+            font-family: 'Arial';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 40px;
+            color: #414141;
+            text-align: center;
+        }
+        .para{
+            font-family: 'Arial';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 30px;
+            text-align: center;
+            color: #414141;
+            margin-top: 50px;
+        }
+        table{
+            width: 1440px;
+            height: auto;
+            border-collapse: collapse;
+            margin-top: 32px;
+        }
+        tr{
+            border: 1px solid #CFCFCF;
+           
+        }
+        :root{
+            
+           --font-fam: 'Arial';
+           --font-st: normal;
+           --font-we: 700;
+            --font-sz: 22px;
+            --font-lh: 25px;
+            color: #212121;
+        }
+        th{
+            background: #EAE7E7;
+            font-family:var(--font-fam);
+            font-style: var(--font-st);
+            font-weight: var(--font-we);
+            font-size: var(--font-sz);
+            line-height: var(--font-lh);
+            text-align: left;
+            padding: 15px;
+        }
+        td{
+            font-family:var(--font-fam);
+            font-style: var(--font-st);
+            font-weight: 400;
+            font-size:20px;
+            line-height: 23px;
+            text-align: left;
+            padding: 15px;
+        }
+        .heading-1{
+            font-family: 'Arial';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #414141;
+        }
+        .para-1{
+            font-family: 'Arial';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 40px;
+            text-align: center;
+            color: #414141;
+        }
+        .form-grp-1,.form-grp-2{
+            display:inline-block;
+            text-align: left;
+            margin-left: 10px;
+            padding: 10px;
+        }
+        .label-form{
+            font-family: 'Arial';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 21px;
+            color: #414141;
+            margin-left: 15px;
+        }
+        .text{
+            width: 315px;
+            padding: 12px;
+            border: 1px solid #CFCFCF;
+            border-radius: 1px;
+            resize: vertical;
+            margin: 10px;
+        }      
+        input[type=submit],input[type=reset]{
+            cursor: pointer;
+            border: 1px solid #CFCFCF;
+        }
+        input[type=color]
+        {     
+            height: 26px;
+            width: 71px;
+            margin: 10px;  
+        }
+        .footer{
+            background: #F9F9F9;
+            width: 1895px;
+            height: 120px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body vlink="#FF0000">
+    <header class="main-nav" id="navbar">
+        <div class="container">
+            <nav>
+                <div class="flex">
+                    <div class="col-1-1">
+                        <a href="#" title="Home"><img src="/assets/images/logo.png" width="202" height="54" alt="Logo"></a>
+                    </div>
+                    <div class="col-1-1 navbar" id="myTopnav">  
+                        <ol class="topnav">
+                            <li><a href="#" style=" font-family: 'Arial';
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: 20px;
+                                line-height: 23px;" title="Home">Home</a></li>
+                            <li><a href="#" class="link" title="Html">Html</a></li>
+                            <li><a href="#" class="link" title="Css">Css</a></li>
+                            <li><a href="#" class="link" title="Layout">Layout</a></li>
+                            <li><a href="#" class="link" title="Bootstrap">Bootstrap</a></li>
+                        </ol>
+                    </div>
+                    <div class="col-1-1">
+                        <input type="text" class="search-btn" placeholder="Enter keyword, Item # or Part #"><i class="fa fa-search icon" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="header-banner">
+        <div class="container">
+            <div class="d-flex">
+                <div class="col-1-1">
+                    <h2 class="main-heading">Lorem ipsum</h2>
+                    <p class="para">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed<br>diam nonummy nibh euismod 
+                    </p>
+
+                    <table>
+                        <tr>
+                            <th>Company</th>
+                            <th>Contact</th>
+                            <th>Country</th>
+                        </tr>
+                        <tr>
+                            <td>Lorem ipsum</td>
+                            <td>Maria Anders</td>
+                            <td>Sweden</td>
+                        </tr>
+                        <tr>
+                            <td>Lorem ipsum dolor </td>
+                            <td>Christina Berglund</td>
+                            <td>Germany</td>
+                        </tr>
+                        <tr>
+                            <td>Lorem ipsum quia</td>
+                            <td>Francisco Chang</td>
+                            <td>Mexico</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>  
+    </section>
+    <section class="main-heading-1">
+        <div class="container">
+            <div class="d-flex">
+                <div class="col-1-1">
+                    <h3 class="heading-1">Lorem ipsum</h3>
+                    <p class="para-1">
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad <br>
+                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in <br>
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt<br>
+                        mollit anim id est laborum."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main-heading-1">
+        <div class="container">
+            <div class="d-flex">
+                <div class="col-1-1">
+                    <h3 class="heading-1">Lorem ipsum</h3>
+                    <video width="1046" height="424" controls src="/assets/videos/mov_bbb.mp4">   
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main-heading-1">
+        <div class="container">
+            <div class="d-flex">
+                <div class="col-1-1">
+                    <h3 class="heading-1">Lorem ipsum</h3>
+                    <audio width="563" height="123" controls src="/assets/videos/mov_bbb.mp4">   
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main-heading-1">
+        <div class="container">
+                <div class="col-1-1">
+                    <h3 class="heading-1">Lorem ipsum</h3>
+                    <center>
+                    <form style="margin-top: 90px;">
+                       <div class="form-grp-1">
+                            <label class="label-form">First Name: </label><br>
+                            <input type="text" class="text" placeholder="First Name">
+                       </div>
+                       <div class="form-grp-2">
+                            <label class="label-form">Last Name: </label><br>
+                            <input type="text" class="text" placeholder="Last Name">
+                        </div>
+                        <div style="text-align:left;margin-left: 548px;padding: 10px;">
+                            <label class="label-form">Email Id:</label><br>
+                            <input type="email" class="text" style="width: 708px;" placeholder="Email ID">
+                        </div>
+                        <div class="form-grp-1">
+                            <label class="label-form">Mobile Number: </label><br>
+                            <input type="tel-n" class="text" placeholder="Mobile Number">
+                       </div>
+                       <div class="form-grp-2">
+                            <label class="label-form">Website: </label><br>
+                            <input type="text" class="text" placeholder="Website">
+                        </div><br>
+                        <div class="form-grp-1">
+                            <label class="label-form">Date: </label><br>
+                            <input type="date" class="text" placeholder="dd-mm-yyyy">
+                       </div>
+                       <div class="form-grp-2">
+                            <label class="label-form">Date & Time: </label><br>
+                            <input type="datetime-local" class="text" placeholder="dd-mm-yyyy--:--">
+                        </div><br>
+                        <div class="form-grp-1">
+                            <label class="label-form">Select City: </label><br>
+                            <select class="text" style="width: 345px;">
+                                <option selected>City</option>
+                                <option>Ahmedabad</option>
+                                <option>Surat</option>
+                                <option>Baroda</option>
+                                <option>Rajkot</option>
+                            </select>
+                       </div>
+                       <div class="form-grp-2">
+                            <label class="label-form">Gender: </label><br>
+                            <select class="text" style="width: 345px;">
+                                <option>Male</option>
+                                <option selected>Female</option>
+                            </select>
+                        </div><br>
+                        <div class="form-grp-1" style="margin-right:435px;">
+                            <label class="label-form">Folder: </label>
+                            <input type="file" class="file">
+                       </div><br>
+                       <div class="form-grp-1" style="margin-right:605px;">
+                        <label class="label-form">Color: </label>
+                        <input type="color">
+                        </div><br>
+                        <div class="form-grp-1" style="margin-right:553px;">
+                            <label class="label-form">Range: </label>
+                            <input type="range">
+                            </div><br>
+                        <div  class="form-grp-1" style="margin-right:465px;">
+                            <input type="submit" value="Submit" style="font-family:'Lato';font-size:18px;width: 129px;height: 52px;background:white;color:#000000;font-weight:700;margin-right: 10px;margin-top: 20px;"> <input type="Reset" value="Reset" style="font-family:'Lato';font-size:18px;width: 129px;height: 52px;background:white;color:#000000;font-weight:700">
+                        </div>
+                        </form>
+                    </center>
+                </div>
+            </div>
+    </section>
+
+    <section class="main-heading-1">
+        <div class="d-flex">
+            <div class="col-1-1">
+                <iframe class="frame" width="570" height="209" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2965.0824050173574!2d-93.63905729999999!3d41.998507000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sWebFilings%2C+University+Boulevard%2C+Ames%2C+IA!5e0!3m2!1sen!2sus!4v1390839289319">
+                </iframe>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="container">
+            <div class="d-flex">
+                <div style="margin-top: -15px;">
+                    <h6 style="font-size: 20px;font-weight: 700;font-family: Arial;font-style: normal;text-align: center;">Radixweb</p>
+                    <p style="font-size:18px;font-weight:400;font-family:Arial;font-style:normal;color:#1D1D1D;text-align: center;">Ekyarth, B/H Nirma University, chharodi, Ahmedabad-382481, India.</p>    
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
