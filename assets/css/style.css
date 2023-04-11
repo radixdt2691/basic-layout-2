@@ -73,7 +73,7 @@ table {
 }
 
 body {
-    font-family: 'Arial';
+    font-family: 'Arial', sans-serif;
     font-size: 20px;
     color: #000000;
 }
@@ -163,6 +163,14 @@ body {
 }
 
 /* Custom width*/
+.w-100 {
+    width: 100%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
 .w-40 {
     width: 70px;
 }
@@ -325,7 +333,7 @@ header {
 
 /* table section */
 table {
-    max-width: 1440px;
+    max-width: 87%;
     height: auto;
     width: 100%;
     text-align: left;
@@ -345,15 +353,7 @@ td {
 }
 
 /* Form Section */
-.user_form form input[type=text], [type=number], [type=url], [type=date], [type=datetime-local], select {
-    width: 315px;
-    height: auto;
-}
 
-.user_form form input[type=email] {
-    width: 660px;
-    height: auto;
-}
 
 input[type="file"] {
     display: none;
@@ -410,10 +410,6 @@ input[type="file"] {
         font-size: 45px;
     }
 
-    table {
-        max-width: 1140px;
-    }
-
     .font-40 {
         font-size: 35px;
     }
@@ -437,9 +433,6 @@ input[type="file"] {
         font-size: 40px;
     }
 
-    table {
-        max-width: 950px;
-    }
 
     .font-40 {
         font-size: 30px;
@@ -449,7 +442,7 @@ input[type="file"] {
         max-width: 75%;
     }
 
-    .video video {
+    video {
         width: 70%;
     }
 }
@@ -471,9 +464,6 @@ input[type="file"] {
         font-size: 35px;
     }
 
-    table {
-        max-width: 700px;
-    }
 
     .font-40 {
         font-size: 25px;
@@ -529,7 +519,7 @@ input[type="file"] {
         width: unset;
     }
 
-    .video .pb-50 {
+    .pb-50 {
         padding-bottom: unset;
     }
 
@@ -545,7 +535,7 @@ input[type="file"] {
         padding-bottom: 70px;
     }
 
-    .iframe iframe {
+    iframe {
         width: 70%;
     }
 }
