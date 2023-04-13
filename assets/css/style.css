@@ -168,6 +168,7 @@ body {
 /* img css */
 img {
     max-width: 100%;
+    height: auto;
 }
 
 /* Display */
@@ -304,7 +305,7 @@ header {
 }
 
 .search ::placeholder {
-    font-family: 'nunitosans-regular';
+    font-family: 'nunitosans-regular', sans-serif;
     font-size: 16px;
     color: #9B9B9B;
 }
@@ -362,7 +363,7 @@ input[type="file"] {
 .user_form input::placeholder {
     font-size: 16px;
     color: #DADADA;
-    font-family: 'Arial';
+    font-family: 'Arial', sans-serif;
 }
 
 .border-input {
@@ -372,7 +373,7 @@ input[type="file"] {
 .btn-submit {
     padding: 15px 36px;
     border: 1px solid #CFCFCF;
-    font-family: 'lato-regular';
+    font-family: 'lato-regular', sans-serif;
 }
 
 .btn-submit:hover {
