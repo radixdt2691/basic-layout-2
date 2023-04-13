@@ -520,13 +520,16 @@ input[type="file"] {
     }
 
     .user_form form input[type=email] {
-        width: 50%;
+        width: 100%;
     }
     .align-center-sm{
         align-items: center;
     }
     .gap-10-sm{
         gap: 10px;
+    }
+    .w-100-sm{
+        width: 100%;
     }
     .pb-94 {
         padding-bottom: 70px;
